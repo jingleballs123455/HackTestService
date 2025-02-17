@@ -53,4 +53,5 @@ def upload_image():
         return render_template('result.html', result_image=result_image_path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Используем порт из окружения или 5000 по умолчанию
+    app.run(host="0.0.0.0", port=port, debug=False)
